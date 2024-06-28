@@ -1,3 +1,3 @@
 export const lanes = {
-    angle: Math.PI / 8,
+    angle: Math.PI / 12,
 }

@@ -22,8 +22,8 @@ export const arrowLayout = (lane: number, direction: SwingDirection) => {
 
     const a = -lane * lanes.angle - Math.PI / 4 + (Math.PI / 2) * (direction - 1)
 
-    const p = Math.cos(a) * Math.SQRT2 * note.radius * ( options.noteSize - (2/3) ) * 3
-    const q = Math.sin(a) * Math.SQRT2 * note.radius * ( options.noteSize - (2/3) ) * 3
+    const p = Math.cos(a) * Math.SQRT2 * note.radius * options.noteSize
+    const q = Math.sin(a) * Math.SQRT2 * note.radius * options.noteSize
 
     return new Quad({
         x1: -p,

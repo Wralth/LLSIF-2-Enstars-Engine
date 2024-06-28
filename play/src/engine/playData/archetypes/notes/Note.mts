@@ -122,7 +122,7 @@ export abstract class Note extends Archetype {
     }
 
     render() {
-        this.s = Math.unlerp(this.visualTime.min, this.visualTime.max, ( time.now + this.visualTime.max * 2 ) / 3)
+        this.s = Math.unlerp(this.visualTime.min, this.visualTime.max, time.now)
     }
 
     playSFX() {
