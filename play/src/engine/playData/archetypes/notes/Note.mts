@@ -101,7 +101,7 @@ export abstract class Note extends Archetype {
         if (this.shouldScheduleSFX && !this.hasSFXScheduled && time.now >= this.scheduleSFXTime)
             this.scheduleSFX()
 
-        if (time.now < this.visualTime.min) return
+        if (time.now < this.visualTime.min + .7/options.noteSpeed) return
         if (options.hidden > 0 && time.now > this.visualTime.hidden) return
 
         this.render()

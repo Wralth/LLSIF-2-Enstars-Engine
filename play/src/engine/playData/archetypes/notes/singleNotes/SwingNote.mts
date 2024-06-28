@@ -76,6 +76,33 @@ export class SwingNote extends SingleNote {
 
     render() {
         super.render()
+		
+		/*
+		const startSize = 1/5
+		const scale = this.s*(1 - startSize) + startSize
+		const currLayout = this.arrow.layout.mul(this.s**Math.SQRT2)
+		const currCenter = new Rec( 
+			(currLayout.x1 + currLayout.x2) / 2, 
+			(currLayout.y1 + currLayout.y2) / 2,
+			(currLayout.x3 + currLayout.x4) / 2,
+			(currLayout.y3 + currLayout.y4) / 2
+		)
+		const dimensions = new Rec( 
+			(this.arrow.layout.x1 - this.arrow.layout.x2) / 2, 
+			(this.arrow.layout.y1 - this.arrow.layout.y2) / 2,
+			(this.arrow.layout.x3 - this.arrow.layout.x4) / 2, 
+			(this.arrow.layout.y3 - this.arrow.layout.y4) / 2
+		)
+		const newLayout = new Quad({
+			x1: currCenter.l - dimensions.l * scale,
+			x2: currCenter.l + dimensions.l * scale,
+			y1: currCenter.
+			l: currCenter.x - dimensions.x * scale,
+			r: currCenter.x + dimensions.x * scale,
+			t: currCenter.y + dimensions.y * scale,
+			b: currCenter.y - dimensions.y * scale,
+		})
+		*/
 
         skin.sprites.draw(sprites.arrow, this.arrow.layout.mul(this.s), this.arrow.z, 1)
     }

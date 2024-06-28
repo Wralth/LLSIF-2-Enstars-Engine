@@ -26,10 +26,22 @@ export abstract class SingleNote extends Note {
         if (this.singleImport.hold && time.now >= this.targetTime) return
 
         super.render()
-
-        skin.sprites.draw(sprites.head, this.note.layout.mul(this.s), this.note.z, 1)
+		
+		const startSize = 1/5
+		const scale = this.s*(1 - startSize) + startSize
+		const currLayout = this.note.layout.mul(this.s**Math.SQRT2)
+		const currCenter = new Vec( (currLayout.l + currLayout.r) / 2, (currLayout.t + currLayout.b) / 2 )
+		const dimensions = new Vec( (this.note.layout.r - this.note.layout.l) / 2, (this.note.layout.t - this.note.layout.b) / 2)
+		const newLayout = new Rect({
+			l: currCenter.x - dimensions.x * scale,
+			r: currCenter.x + dimensions.x * scale,
+			t: currCenter.y + dimensions.y * scale,
+			b: currCenter.y - dimensions.y * scale,
+		})
+	
+        skin.sprites.draw(sprites.head, newLayout, this.note.z, 1)
 
         if (this.singleImport.sim)
-            skin.sprites.draw(sprites.sim, this.note.layout.mul(this.s), this.sim.z, 1)
+            skin.sprites.draw(sprites.sim, newLayout, this.sim.z, 1)
     }
 }
