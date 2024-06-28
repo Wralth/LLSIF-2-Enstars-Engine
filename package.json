@@ -21,7 +21,7 @@
     "build": "tsc -p ./lib && sonolus-cli --build ./play && sonolus-cli --build ./watch && sonolus-cli --build ./preview && sonolus-cli --build ./tutorial && node ./lib/build.mjs"
   },
   "dependencies": {
-    "@sonolus/core": "~7.5.0"
+    "@sonolus/core": "^7.6.0"
   },
   "devDependencies": {
     "@sonolus/sonolus.js": "~9.4.0",
