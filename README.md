@@ -1,6 +1,6 @@
-# Sonolus LLSIF Engine
+# Sonolus LLSIF 2 Ensemble Stars Engine
 
-A recreation of Love Live! School idol festival engine in [Sonolus](https://sonolus.com).
+A recreation of Ensemble Stars!! Music engine in [Sonolus](https://sonolus.com) based on the LLSIF Engine by NonSpicyBurrito at https://github.com/NonSpicyBurrito/sonolus-llsif-engine.
 
 ## Links
 
