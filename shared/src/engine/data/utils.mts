@@ -5,6 +5,6 @@ export const layout = (lane: number, size: number) =>
     new Rect({
         l: -note.radius * size,
         r: note.radius * size,
-        t: -note.radius * size -0.2,
-        b: note.radius * size -0.2,
-    }).add(new Vec(0, 1.2).rotate(-lane * lanes.angle))
+        t: -note.radius * size,
+        b: note.radius * size,
+    }).add(new Vec(0, 1).rotate(-lane * lanes.angle))

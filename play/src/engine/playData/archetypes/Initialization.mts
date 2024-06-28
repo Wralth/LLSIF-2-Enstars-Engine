@@ -18,8 +18,8 @@ export class Initialization extends Archetype {
                 ? screen.h
                 : (screen.h * screen.aspectRatio) / targetAspectRatio
 
-        const t = h * 0.25
-        const b = t - h * 0.625
+        const t = h * 0.5
+        const b = t - h * .8
 
         stage.center = t
         stage.radius = t - b
