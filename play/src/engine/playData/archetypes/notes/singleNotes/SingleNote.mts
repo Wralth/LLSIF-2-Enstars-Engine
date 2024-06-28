@@ -27,7 +27,11 @@ export abstract class SingleNote extends Note {
 
         super.render()
 
-        skin.sprites.draw(sprites.head, this.note.layout.mul(this.s), this.note.z, 1)
+        const start = 2 / 3
+        const end = 1
+        const interpolated = start + (end - start) * this.s
+
+        skin.sprites.draw(sprites.head, this.note.layout.mul(interpolated), this.note.z, 1)
 
         if (this.singleImport.sim)
             skin.sprites.draw(sprites.sim, this.note.layout.mul(this.s), this.sim.z, 1)
