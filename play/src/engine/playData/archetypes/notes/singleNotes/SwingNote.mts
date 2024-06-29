@@ -2,7 +2,7 @@ import { SwingDirection } from '../../../../../../../shared/src/engine/data/Swin
 import { windows } from '../../../../../../../shared/src/engine/data/windows.mjs'
 import { options } from '../../../../configuration/options.mjs'
 import { buckets } from '../../../buckets.mjs'
-import { arrowLayout } from '../../../note.mjs'
+//import { arrowLayout } from '../../../note.mjs'
 import { getZ, layer, skin, sprites } from '../../../skin.mjs'
 import { isUsed, markAsUsed, transform } from '../../InputManager.mjs'
 import { SingleNote } from './SingleNote.mjs'
@@ -16,22 +16,22 @@ export class SwingNote extends SingleNote {
 
     bucket = buckets.swingNote
 
-    arrow = this.entityMemory({
+    /*arrow = this.entityMemory({
         layout: Quad,
         z: Number,
-    })
+    })*/
 
     preprocess() {
         super.preprocess()
 
-        if (options.mirror) this.swingImport.direction *= -1
+        //if (options.mirror) this.swingImport.direction *= -1
     }
 
     initialize() {
         super.initialize()
 
-        arrowLayout(this.import.lane, this.swingImport.direction).copyTo(this.arrow.layout)
-        this.arrow.z = getZ(layer.note.arrow, this.targetTime, this.import.lane)
+        //arrowLayout(this.import.lane, this.swingImport.direction).copyTo(this.arrow.layout)
+        //this.arrow.z = getZ(layer.note.arrow, this.targetTime, this.import.lane)
     }
 
     touch() {
@@ -104,6 +104,6 @@ export class SwingNote extends SingleNote {
 		})
 		*/
 
-        skin.sprites.draw(sprites.arrow, this.arrow.layout.mul(this.s), this.arrow.z, 1)
+        //skin.sprites.draw(sprites.arrow, this.arrow.layout.mul(this.s), this.arrow.z, 1)
     }
 }
